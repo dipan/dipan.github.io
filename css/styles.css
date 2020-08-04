@@ -158,7 +158,6 @@ a {
 
 a:hover {
   color: #824027;
-  text-decoration: underline;
 }
 
 a:not([href]) {
@@ -9242,7 +9241,6 @@ section.resume-section .resume-section-content {
 }
 
 .contact-form {
-  text-align: center;
   margin-top: 40px;
 }
 
@@ -9268,11 +9266,43 @@ section.resume-section .resume-section-content {
   transition: 0.2s opacity;
 }
 
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="url"], input[type="tel"], textarea {
+  height: 40px;
+  width: 100%;
+  border: none;
+  background: #F4F4F4;
+  border-bottom: 2px solid #EEE;
+  color: #354052;
+  padding: 0px 10px;
+  opacity: 0.5;
+  -webkit-transition: 0.2s border-color, 0.2s opacity;
+  transition: 0.2s border-color, 0.2s opacity;
+}
+
+textarea {
+  padding: 10px 10px;
+  min-height: 80px;
+  resize: vertical;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="url"]:focus, input[type="tel"]:focus, textarea:focus {
+  border-color: #bd5d38;
+  opacity: 1;
+  outline: none;
+}
+
 .main-btn {
-  background: #6195FF;
+  background: #bd5d38;
   color: #FFF;
 }
 
 .main-btn:hover, .white-btn:hover, .outline-btn:hover {
-  opacity: 0.8;
+  background: #000000;
+}
+
+.works{
+  color: #6c757d;
+}
+.works:hover{
+  color: #bd5d38 !important;
 }
