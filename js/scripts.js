@@ -42,3 +42,54 @@
 
     $("li").tooltip({ boundary: 'window' });
 })(jQuery); // End of use strict
+
+var app = new Vue({
+    el: '#vueApp',
+    data: {
+        name: undefined,
+        email: undefined,
+        subject: undefined,
+        message: undefined
+    },
+    methods: {
+        sendEmail: function () {
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    senderName: this.name,
+                    senderEmail: this.email,
+                    subject: this.subject,
+                    appName: 'Resume Contact Form',
+                    message: this.message
+                })
+            };
+            fetch('https://carbonit.dipan.dev/api/v0/email', requestOptions)
+                .then(async (response) => {
+                    const data = await response.json();
+                    console.log(data);
+
+                    if (response.ok) {
+                        this.clearAll();
+                    } else {
+                        console.log(response);
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        },
+        isDisabled: function () {
+            return this.name == undefined || this.name == ''
+                || this.email == undefined || this.email == ''
+                || this.subject == undefined || this.subject == ''
+                || this.message == undefined || this.message == '';
+        },
+        clearAll: function () {
+            this.name = undefined;
+            this.email = undefined;
+            this.subject = undefined;
+            this.message = undefined;
+        }
+    }
+})
