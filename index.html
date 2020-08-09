@@ -369,13 +369,37 @@
         <div id="vueApp" class="resume-section-content">
           <h2 class="mb-5">Contact</h2>
           <div class="contact-form">
-            <input type="text" class="input" placeholder="*Name" v-model="name" />
-            <input type="email" class="input" placeholder="*Email" v-model="email" />
-            <input type="text" class="input" placeholder="*Subject" v-model="subject" />
-            <textarea class="input" placeholder="*Message" v-model="message"></textarea>
-            <button class="main-btn" v-on:click="sendEmail()" :disabled="isDisabled()">
+            <input
+              type="text"
+              class="input"
+              placeholder="*Name"
+              v-model="name"
+            />
+            <input
+              type="email"
+              class="input"
+              placeholder="*Email"
+              v-model="email"
+            />
+            <input
+              type="text"
+              class="input"
+              placeholder="*Subject"
+              v-model="subject"
+            />
+            <textarea
+              class="input"
+              placeholder="*Message"
+              v-model="message"
+            ></textarea>
+            <button
+              class="main-btn"
+              v-on:click="sendEmail()"
+              :disabled="isDisabled()"
+            >
               Send message
             </button>
+            <span v-if="infoMessage != ''">{{ infoMessage }}</span>
           </div>
         </div>
       </section>

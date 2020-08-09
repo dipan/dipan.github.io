@@ -43,13 +43,14 @@
     $("li").tooltip({ boundary: 'window' });
 })(jQuery); // End of use strict
 
-var app = new Vue({
+const app = new Vue({
     el: '#vueApp',
     data: {
         name: undefined,
         email: undefined,
         subject: undefined,
-        message: undefined
+        message: undefined,
+        infoMessage: ''
     },
     methods: {
         sendEmail: function () {
@@ -71,8 +72,10 @@ var app = new Vue({
 
                     if (response.ok) {
                         this.clearAll();
+                        this.displayInfoMessage(data.message, 4000);
                     } else {
                         console.log(response);
+                        this.displayInfoMessage(data.userMessage);
                     }
                 })
                 .catch((error) => {
@@ -90,6 +93,17 @@ var app = new Vue({
             this.email = undefined;
             this.subject = undefined;
             this.message = undefined;
+        },
+        displayInfoMessage: function (message, disappearDelay = 0) {
+            this.infoMessage = message;
+            if (disappearDelay > 0) {
+                setTimeout(() => {
+                    this.infoMessage = '';
+                }, disappearDelay);
+            }
         }
+    },
+    mounted: function () {
+        console.log('Vue App mounted successfully');
     }
 })
