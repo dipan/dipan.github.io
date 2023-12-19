@@ -58,14 +58,11 @@ const app = new Vue({
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    senderName: this.name,
                     senderEmail: this.email,
-                    subject: this.subject,
-                    appName: 'Resume Contact Form',
-                    message: this.message
+                    html: `Resume Contact Form<br/>${this.email}<br/>${this.message}`
                 })
             };
-            fetch('https://carbonit.dipan.dev/api/v0/email', requestOptions)
+            fetch(`https://droplet.dipan.dev/api/v0/email?name=${this.name}&email=mandal.common@gmail.com&subject=${this.subject}`, requestOptions)
                 .then(async (response) => {
                     const data = await response.json();
                     console.log(data);
