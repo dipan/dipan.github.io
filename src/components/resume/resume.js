@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./resume.css";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 const Resume = () => {
   const workExperienceList = [
@@ -51,10 +52,6 @@ const Resume = () => {
     }));
   };
 
-  // useEffect(() => {
-  //   sendEmail();
-  // }, []);
-
   const sendEmail = async () => {
     console.log("sendEmail");
     const apiUrl = "https://droplet.dipan.dev/api/v0/email";
@@ -97,6 +94,23 @@ const Resume = () => {
     } catch (error) {
       console.error("Fetch error:", error);
     }
+  };
+
+  const downloadResume = () => {
+    const fileName = "Resume_Dipan.pdf";
+    const pdfFilePath = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/${fileName}`;
+    console.log(`pdfFilePath: ${pdfFilePath}`);
+
+    const blob = new Blob([""], { type: "application/pdf" });
+
+    const downloadLink = document.createElement("a");
+    downloadLink.href = pdfFilePath;
+    downloadLink.download = fileName;
+
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+
+    document.body.removeChild(downloadLink);
   };
 
   return (
@@ -172,6 +186,12 @@ const Resume = () => {
             <h1 className="mb-0">
               DIPAN
               <span className="text-primary">MANDAL</span>
+              <span className="download-file">
+                <FileDownloadIcon
+                  fontSize="large"
+                  onClick={() => downloadResume()}
+                />
+              </span>
             </h1>
             <div className="subheading mb-5">
               C-44 SRINAGAR(W) GARIA STATION ROAD · INDIA, WEST BENGAL,

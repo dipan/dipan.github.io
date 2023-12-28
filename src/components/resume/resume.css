@@ -10077,6 +10077,10 @@ a.text-dark:focus {
   visibility: hidden !important;
 }
 
+.download-file:hover {
+  cursor: pointer;
+}
+
 @media print {
   *,
   *::before,
