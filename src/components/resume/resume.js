@@ -61,6 +61,14 @@ const Resume = () => {
       html: `<b>From: ${contactInfo.email}</b><br/>
       <b>Subject: ${contactInfo.subject}</b><br/>
       <b>Message:</b> ${contactInfo.message}`,
+      sender: {
+        name: "Resume",
+        email: "no-reply@dipan.dev",
+      },
+      replyTo: {
+        name: contactInfo.name,
+        email: contactInfo.email,
+      },
     };
 
     try {
