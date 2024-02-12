@@ -6,11 +6,17 @@ import FileDownloadIcon from "@mui/icons-material/FileDownload";
 const Resume = () => {
   const workExperienceList = [
     {
+      designation: "Senior Software Engineer II",
+      organization: "Zemoso Technologies",
+      description: "Work on multipple orjects as Full Stack Engineer",
+      workPeriod: "29th January 2024 - Present",
+    },
+    {
       designation: "Associate Consultant",
       organization: "Global Logic (India)",
       description:
         "Enhance existing functionalities in advertising technology domain. Monitor PROD jobs and perform OnCall tasks.",
-      workPeriod: "12th April 2023 - Present",
+      workPeriod: "12th April 2023 - 26th January 2024",
     },
     {
       designation: "Senior Software Developer",
@@ -55,7 +61,9 @@ const Resume = () => {
   const sendEmail = async () => {
     console.log("sendEmail");
     const apiUrl = "https://droplet.dipan.dev/api/v0/email";
-    const queryParams = `?name=${contactInfo.name}&email=mandaldipan01@gmail.com&subject=${contactInfo.subject}`;
+    const queryParams = `?name=${"Dipan Mandal"}&email=mandaldipan01@gmail.com&subject=${
+      contactInfo.subject
+    }`;
 
     const requestBody = {
       html: `<b>From: ${contactInfo.email}</b><br/>
