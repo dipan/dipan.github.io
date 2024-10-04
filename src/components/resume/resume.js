@@ -8,7 +8,7 @@ const Resume = () => {
     {
       designation: "Senior Software Engineer II",
       organization: "Zemoso Technologies",
-      description: "Work on multipple orjects as Full Stack Engineer",
+      description: "Work on multiple projects as Full Stack Engineer",
       workPeriod: "29th January 2024 - Present",
     },
     {
@@ -210,8 +210,8 @@ const Resume = () => {
               </span>
             </h1>
             <div className="subheading mb-5">
-              C-44 SRINAGAR(W) GARIA STATION ROAD · INDIA, WEST BENGAL,
-              KOLKATA-700094 · (+91) 7278516532 ·
+              Oakstone Lakeview Apartments, A209, Eidgah road, Varthur,
+              Bangalore, Karnataka-560087 · (+91) 7278516532 ·
               <a href="mailto:mandaldipan01@gmail.com">
                 mandaldipan01@gmail.com
               </a>
