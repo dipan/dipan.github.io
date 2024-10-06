@@ -60,7 +60,7 @@ const Resume = () => {
 
   const sendEmail = async () => {
     console.log("sendEmail");
-    const apiUrl = "https://droplet.dipan.dev/api/v0/email";
+    const apiUrl = "https://droplet.dipan.dev/api/public/email";
     const queryParams = `?name=${"Dipan Mandal"}&email=mandaldipan01@gmail.com&subject=${
       contactInfo.subject
     }`;
