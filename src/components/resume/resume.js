@@ -6,14 +6,21 @@ import FileDownloadIcon from "@mui/icons-material/FileDownload";
 const Resume = () => {
   const workExperienceList = [
     {
+      designation: "Senior Software Engineer II",
+      organization: "JP Morgan Chase",
+      description:
+        "Working as developer for conneted commerce line of business to develop and enhance features for applications like collect and deposit & payroll enrollment.",
+      workPeriod: "21st July 2025 - Present",
+    },
+    {
       designation: "Senior Software Engineer",
       organization: "Adti Consultance(PayPal)",
       description:
         "Work for risk onboarding team to manage new onboraded profile. Validate newly created accounts at multiple levels based on conditions configured for respective country.",
-      workPeriod: "27th November 2024 - Present",
+      workPeriod: "27th November 2024 - 18th July 2025",
     },
     {
-      designation: "Senior Software Engineer II",
+      designation: "Senior Software Engineer III",
       organization: "Zemoso Technologies",
       description: "Work on multiple projects as Full Stack Engineer",
       workPeriod: "29th January 2024 - 12th November 2024",
